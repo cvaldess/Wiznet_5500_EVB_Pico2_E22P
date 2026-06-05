@@ -1,0 +1,134 @@
+# Wiznet_5500_EVB_Pico2_E22P
+
+A custom PCB carrier board built around the **WIZnet W5500-EVB-Pico2** (an RP2350 with an **on-board W5500 Ethernet** controller) and an **Ebyte E22P LoRa module**, in a single compact design for Meshtastic applications and a low-cost Ethernet MQTT Gateway.
+
+![W5500-EVB-Pico2-E22P](W5500_evb_Pico2-E22P.jpeg)
+
+## License
+
+This project is licensed under the [GNU General Public License v2.0](LICENSE).
+
+## Author
+
+**@cvaldess** — [cvaldess@cvaldess.com](mailto:cvaldess@cvaldess.com) - [meshtastic.cvaldess.com](https://meshtastic.cvaldess.com)
+
+## PCB
+
+![2D PCB Layout](W5500_evb_Pico2-E22P-2D.JPG)
+
+[JLCPCB](https://jlcpcb.com/?from=MJCHJNNSFFPCJAEEP)
+
+## Features
+
+- **WIZnet W5500-EVB-Pico2** — RP2350-based microcontroller with dual-core Arm Cortex-M33 / RISC-V and an **on-board W5500** hardwired TCP/IP Ethernet controller (no external SPI Ethernet module required)
+- **Ebyte E22P (900M30S)** — LoRa transceiver module (900 MHz, 30 dBm) for long-range wireless communication
+- **BMP280 sensor header** — Dedicated footprint (H1) for a BMP280 temperature and pressure sensor via I2C
+- **I2C expansion header** (H3) — +5V, +3.3V, SCL, SDA, GND for additional I2C peripherals
+- **UART expansion header** (H2) — +5V, +3.3V, TX, RX, GND for serial communication
+- **Decoupling capacitors** — 100 µF and 10 µF for power supply filtering
+- **PoE PD** - Power Supply.
+
+## Board Images
+
+| 3D Render | Assembled |
+|:---------:|:---------:|
+| ![3D](W5500_evb_Pico2-E22P-3D.JPG) | ![Assembled](W5500_evb_Pico2-E22P.jpeg) |
+
+## Schematic
+
+The full schematic is available as a PDF file:
+
+- [SCH-W5500_evb_Pico2-E22P.pdf](SCH-W5500_evb_Pico2-E22P.pdf)
+
+## Bill of Materials
+
+| Component | Description | Quantity |
+|-----------|-------------|:--------:|
+| [WIZnet W5500-EVB-Pico2](https://s.click.aliexpress.com/e/_c3U7kirP) | RP2350 microcontroller board with on-board W5500 Ethernet | 1 |
+| [Ebyte E22-900M30S](https://s.click.aliexpress.com/e/_c3ABeS7X) | SX1262 Wireless Transceiver LoRa Module (30 dBm) | 1 |
+| [BMP280 module](https://s.click.aliexpress.com/e/_c3lamruN) | I2C temperature & pressure sensor | 1 |
+| [C1 — 100µF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Ceramic capacitor | 1 |
+| [C2 — 10µF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Ceramic capacitor | 1 |
+| [Pin headers](https://s.click.aliexpress.com/e/_c3xaLyyp) | 2.54 mm male/female headers | As needed |
+| [PoE to USB-C 802.3af](https://s.click.aliexpress.com/e/_c3vekIoh) | 802.3af PoE to USB-C Power Source | 1 |
+| [PoE Injector 802.3af](https://s.click.aliexpress.com/e/_c3LHjvOt) | 802.3af PoE Injector | 1 |
+| [N pigtail](https://s.click.aliexpress.com/e/_c3n4Hui9) | N Female to U.FL RG178 | 1 |
+| [RJ45 Connector](https://s.click.aliexpress.com/e/_c3GQpW4D) | Waterproof CAT6 RJ45 Panel Connector | 1 |
+
+## Pin Mapping
+
+### W5500 Ethernet (SPI0) — on-board
+
+| W5500 Pin | Pico 2 GPIO |
+|-----------|-------------|
+| MISO      | GP16        |
+| CS        | GP17        |
+| SCK       | GP18        |
+| MOSI      | GP19        |
+| RST       | GP20        |
+
+### Ebyte E22P LoRa (SPI1)
+
+| E22P Pin | Pico 2 GPIO |
+|----------|-------------|
+| SCK      | GP10        |
+| MOSI     | GP11        |
+| MISO     | GP12        |
+| CS       | GP13        |
+| RST      | GP15        |
+| DIO1/IRQ | GP14        |
+| BUSY     | GP2         |
+| RXEN     | GP3 (held HIGH — LNA/PA enable) |
+| TXEN     | bridged from DIO2 on the module |
+
+### BMP280 Sensor (I2C) — H1
+
+| BMP280 Pin | Signal |
+|------------|--------|
+| VCC        | +3.3V  |
+| GND        | GND    |
+| SCL        | I2C SCL|
+| SDA        | I2C SDA|
+
+### I2C Expansion — H3
+
+| Pin | Signal |
+|-----|--------|
+| 1   | +5V    |
+| 2   | +3.3V  |
+| 3   | SCL    |
+| 4   | SDA    |
+| 5   | GND    |
+
+### UART Expansion — H2
+
+| Pin | Signal |
+|-----|--------|
+| 1   | +5V    |
+| 2   | +3.3V  |
+| 3   | TX     |
+| 4   | RX     |
+| 5   | GND    |
+
+## Firmware
+
+Pre-built Meshtastic firmware (v2.8.0.afb8a66) for the WIZnet W5500-EVB-Pico2 + E22P hardware. This version includes the "Use with client.meshtastic.org" feature. Choose your installation method:
+
+### Method 1: Direct USB flash (UF2)
+Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop the UF2 file onto the RP2350 drive that appears.
+
+- [Download .uf2 file](https://meshfiles.cvaldess.com/firmware-wiznet_5500_evb_pico2_e22p-2.8.0.afb8a66.uf2)
+
+### Method 2: Ethernet OTA utility
+Update an already-deployed node over the network using the [Ethernet OTA utility](https://github.com/meshtastic/firmware/pull/10136). Download the BIN file and upload it through the utility.
+
+- [Download .bin file](https://meshfiles.cvaldess.com/firmware-wiznet_5500_evb_pico2_e22p-2.8.0.afb8a66.bin)
+
+## Use Cases
+
+- Meshtastic mesh network
+- Low cost MQTT Gateway
+- Remote environmental monitoring (temperature, pressure)
+- LoRa-based sensor networks with Ethernet gateway
+- Industrial IoT data collection nodes
+- Weather station with wired and wireless connectivity
