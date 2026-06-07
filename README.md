@@ -21,7 +21,8 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 ## Features
 
 - **WIZnet W5500-EVB-Pico2** — RP2350-based microcontroller with dual-core Arm Cortex-M33 / RISC-V and an **on-board W5500** hardwired TCP/IP Ethernet controller (no external SPI Ethernet module required)
-- **Ebyte E22P (900M30S)** — LoRa transceiver module (900 MHz, 30 dBm) for long-range wireless communication
+- **WIZPoE-P1** - Compact PoE module compliant with IEEE802.3af, supporting Mode A and Mode B
+- **Ebyte E22P (868M30S)** — LoRa transceiver module (900 MHz, 30 dBm) for long-range wireless communication
 - **BMP280 sensor header** — Dedicated footprint (H1) for a BMP280 temperature and pressure sensor via I2C
 - **I2C expansion header** (H3) — +5V, +3.3V, SCL, SDA, GND for additional I2C peripherals
 - **UART expansion header** (H2) — +5V, +3.3V, TX, RX, GND for serial communication
@@ -44,16 +45,14 @@ The full schematic is available as a PDF file:
 
 | Component | Description | Quantity |
 |-----------|-------------|:--------:|
-| [WIZnet W5500-EVB-Pico2](https://s.click.aliexpress.com/e/_c3U7kirP) | RP2350 microcontroller board with on-board W5500 Ethernet | 1 |
-| [Ebyte E22-900M30S](https://s.click.aliexpress.com/e/_c3ABeS7X) | SX1262 Wireless Transceiver LoRa Module (30 dBm) | 1 |
+| [WIZnet W5500-EVB-Pico2](https://shop.wiznet.eu/en/w5500-evb-pico2.html) | RP2350 microcontroller board with on-board W5500 Ethernet | 1 |
+| [WIZPoE-P1](https://shop.wiznet.eu/en/wizpoe-p1.html) | Compact PoE module compliant with IEEE802.3af, supporting Mode A and Mode B | 1 |
+| [Ebyte E22-868M30S](https://s.click.aliexpress.com/e/_c3ABeS7X) | SX1262 Wireless Transceiver LoRa Module (30 dBm) | 1 |
 | [BMP280 module](https://s.click.aliexpress.com/e/_c3lamruN) | I2C temperature & pressure sensor | 1 |
-| [C1 — 100µF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Ceramic capacitor | 1 |
-| [C2 — 10µF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Ceramic capacitor | 1 |
+| [C1 — 470µF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Capacitor ALUM POLY 470uF ±20% 16V SMD | 1 |
+| [C2 — 100nF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Ceramic capacitor | 1 |
 | [Pin headers](https://s.click.aliexpress.com/e/_c3xaLyyp) | 2.54 mm male/female headers | As needed |
-| [PoE to USB-C 802.3af](https://s.click.aliexpress.com/e/_c3vekIoh) | 802.3af PoE to USB-C Power Source | 1 |
 | [PoE Injector 802.3af](https://s.click.aliexpress.com/e/_c3LHjvOt) | 802.3af PoE Injector | 1 |
-| [N pigtail](https://s.click.aliexpress.com/e/_c3n4Hui9) | N Female to U.FL RG178 | 1 |
-| [RJ45 Connector](https://s.click.aliexpress.com/e/_c3GQpW4D) | Waterproof CAT6 RJ45 Panel Connector | 1 |
 
 ## Pin Mapping
 
