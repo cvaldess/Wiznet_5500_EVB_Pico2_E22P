@@ -37,9 +37,9 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 ## Schematic
 
-The full schematic is available as a PDF file:
+The full schematic is available as a SVG file:
 
-- [SCH-W5500_evb_Pico2-E22P.pdf](SCH-W5500_evb_Pico2-E22P.pdf)
+- [SCH-W5500_evb_Pico2-E22P.svg](SCH-W5500_evb_Pico2-E22P.svg)
 
 ## Bill of Materials
 
@@ -122,6 +122,11 @@ Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop t
 Update an already-deployed node over the network using the [Ethernet OTA utility](https://github.com/meshtastic/firmware/pull/10136). Download the BIN file and upload it through the utility.
 
 - [Download .bin file](https://meshfiles.cvaldess.com/firmware-wiznet_5500_evb_pico2_e22p-2.8.0.afb8a66.bin)
+
+### Method 3:
+In our Client Area you can easy Flah it and Configure, also can protect your image with custom PSK.
+
+ - [Client Area](https://clientarea.cvaldess.com/)
 
 ## Use Cases
 
