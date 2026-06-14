@@ -51,7 +51,7 @@ The full schematic is available as a SVG file:
 | [BMP280 module](https://s.click.aliexpress.com/e/_c3lamruN) | I2C temperature & pressure sensor | 1 |
 | [C1 — 470µF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Capacitor ALUM POLY 470uF ±20% 16V SMD | 1 |
 | [C2 — 100nF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Ceramic capacitor | 1 |
-| [Pin headers](https://s.click.aliexpress.com/e/_c3xaLyyp) | 2.54 mm male/female headers | As needed |
+| [Pin header](https://s.click.aliexpress.com/e/_c3xaLyyp) | 2.54 mm male/female headers | As needed |
 | [PoE Injector 802.3af](https://s.click.aliexpress.com/e/_c3LHjvOt) | 802.3af PoE Injector | 1 |
 
 ## Pin Mapping
@@ -80,36 +80,38 @@ The full schematic is available as a SVG file:
 | RXEN     | GP3 (held HIGH — LNA/PA enable) |
 | TXEN     | bridged from DIO2 on the module |
 
-### BMP280 Sensor (I2C) — H1
+### SHT40 Sensor (I2C) — H1
 
-| BMP280 Pin | Signal |
+| SHT40 Pin  | Signal |
 |------------|--------|
 | VCC        | +3.3V  |
 | GND        | GND    |
 | SCL        | I2C SCL|
 | SDA        | I2C SDA|
 
-### I2C Expansion — H3
+### I2C Expansion (STEMMA QT) — CN1
 
 | Pin | Signal |
 |-----|--------|
-| 1   | +5V    |
-| 2   | +3.3V  |
-| 3   | SCL    |
-| 4   | SDA    |
-| 5   | GND    |
+| 1   | GND    |
+| 2   | VCC    |
+| 3   | SDA    |
+| 4   | SCL    |
 
-### UART Expansion — H2
+JP1 - VCC Voltge select (Default 3.3V)
+
+### UART Expansion (JST SH 1.00 mm) — CN2
 
 | Pin | Signal |
 |-----|--------|
-| 1   | +5V    |
-| 2   | +3.3V  |
+| 1   | GND    |
+| 2   | VCC    |
 | 3   | TX     |
 | 4   | RX     |
-| 5   | GND    |
 
-## Firmware
+JP2 - VCC Voltage select (Default 5V)
+
+## Meshtastic Firmware
 
 Pre-built Meshtastic firmware (v2.8.0.21c28dc) for the WIZnet W5500-EVB-Pico2 + E22P hardware. This version includes the "Use with client.meshtastic.org" feature. Choose your installation method:
 
@@ -128,12 +130,18 @@ In our Client Area you can easy Flah it and Configure, also can protect your ima
 
  - [Client Area](https://clientarea.cvaldess.com/)
 
-### CA2RXU LoRa APRS iGate/Digipeater firmware
+## CA2RXU LoRa APRS iGate/Digipeater firmware
 
 Pre-built CA2RXU LoRa APRS iGate/Digipeater firmware for the WIZnet W5500-EVB-Pico2 + E22P hardware
 
+### Method 1: Direct USB flash (UF2)
+Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop the UF2 file onto the RP2350 drive that appears.
+
  - [Download .bin file](https://meshfiles.cvaldess.com/rp2350_igate.bin)
- 
+
+ ### Method 2: Ethernet OTA utility
+Update an already-deployed node over the network using the node Web OTA.
+
  - [Download .uf2 file](https://meshfiles.cvaldess.com/rp2350_igate.uf2)
 
 ## Use Cases
