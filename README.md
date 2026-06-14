@@ -128,10 +128,18 @@ In our Client Area you can easy Flah it and Configure, also can protect your ima
 
  - [Client Area](https://clientarea.cvaldess.com/)
 
-## Use Cases
+### CA2RXU LoRa APRS iGate/Digipeater firmware
 
+Pre-built CA2RXU LoRa APRS iGate/Digipeater firmware for the WIZnet W5500-EVB-Pico2 + E22P hardware
+
+ - [Download .bin file](https://meshfiles.cvaldess.com/rp2350_igate.bin)
+ 
+ - [Download .uf2 file](https://meshfiles.cvaldess.com/rp2350_igate.uf2)
+
+## Use Cases
 - Meshtastic mesh network
 - Low cost MQTT Gateway
+- APRS iGate/Digipeater
 - Remote environmental monitoring (temperature, pressure)
 - LoRa-based sensor networks with Ethernet gateway
 - Industrial IoT data collection nodes
