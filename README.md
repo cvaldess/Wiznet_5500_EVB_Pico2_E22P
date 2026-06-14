@@ -39,7 +39,7 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 The full schematic is available as a SVG file:
 
-- [SCH-W5500_evb_Pico2-E22P.svg](SCH-W5500_evb_Pico2-E22P.svg)
+![Schematics](SCH_W5500_evb_Pico2-E22P.jpg)
 
 ## Bill of Materials
 
