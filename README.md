@@ -118,12 +118,12 @@ Pre-built Meshtastic firmware (v2.8.0.0770000) for the WIZnet W5500-EVB-Pico2 + 
 ### Method 1: Direct USB flash (UF2)
 Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop the UF2 file onto the RP2350 drive that appears.
 
-- [Download .uf2 file](https://meshfiles.cvaldess.com/firmware-wiznet_5500_evb_pico2_e22p-2.8.0.0770000.uf2)
+- [Download .uf2 file](https://meshfiles.cvaldess.com/firmware-wiznet_5500_evb_pico2_e22p.uf2)
 
 ### Method 2: Ethernet OTA utility
 Update an already-deployed node over the network using the [Ethernet OTA utility](https://github.com/meshtastic/firmware/pull/10136). Download the BIN file and upload it through the utility.
 
-- [Download .bin file](https://https://meshfiles.cvaldess.com/firmware-wiznet_5500_evb_pico2_e22p-2.8.0.0770000.bin)
+- [Download .bin file](https://meshfiles.cvaldess.com/firmware-wiznet_5500_evb_pico2_e22p.bin)
 
 ### Method 3:
 In our Client Area you can easy Flah it and Configure, also can protect your image with custom PSK.
