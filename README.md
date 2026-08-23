@@ -132,7 +132,7 @@ In our Client Area you can easy Flah it and Configure, also can protect your ima
 
 ## CA2RXU LoRa APRS iGate/Digipeater firmware
 
-Pre-built CA2RXU LoRa APRS iGate/Digipeater firmware for the WIZnet W5500-EVB-Pico2 + E22P hardware
+Pre-built CA2RXU LoRa APRS iGate/Digipeater firmware for the WIZnet W5500-EVB-Pico2 + E22P-433M30S hardware
 
 ### Method 1: Direct USB flash (UF2)
 Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop the UF2 file onto the RP2350 drive that appears.
