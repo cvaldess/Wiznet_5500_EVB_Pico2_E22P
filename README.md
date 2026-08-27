@@ -4,6 +4,20 @@ A custom PCB carrier board built around the **WIZnet W5500-EVB-Pico2** (an RP235
 
 ![W5500-EVB-Pico2-E22P](W5500_evb_Pico2-E22P.jpeg)
 
+## Where to buy
+
+Everything needed to build this board yourself is in this repository, under the GPL. If you would
+rather skip the sourcing and the soldering, assembled units are available:
+
+**[Buy an assembled board →](https://meshtastic.cvaldess.com/nmwiznet)** — €69.99, built, flashed and
+tested before it ships. Ships from Spain to the EU.
+
+Nothing is held back for the sale: the schematic, the bill of materials and the pin mapping are all
+here, and the same design sent to any board house gives you the same board.
+
+> Meshtastic is a trademark of Meshtastic LLC. This board is an independent design, not
+> affiliated with or endorsed by Meshtastic LLC.
+
 ## License
 
 This project is licensed under the [GNU General Public License v2.0](LICENSE).
