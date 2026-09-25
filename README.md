@@ -53,7 +53,7 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 The full schematic is available as a SVG file:
 
-![Schematics](SCH_W5500_evb_Pico2-E22P.jpg)
+![Schematics](SCH_W5500_evb_Pico2-E22PV2.0.jpg)
 
 ## Bill of Materials
 
@@ -114,14 +114,15 @@ The full schematic is available as a SVG file:
 
 JP1 - VCC Voltge select (Default 3.3V)
 
-### UART Expansion (JST SH 1.00 mm) — CN2
+### GPS Expansion (JST SH 1.00 mm) — CN2
 
 | Pin | Signal |
 |-----|--------|
 | 1   | GND    |
-| 2   | VCC    |
+| 2   | 5V VCC |
 | 3   | TX     |
 | 4   | RX     |
+| 5   | PPS    |
 
 JP2 - VCC Voltage select (Default 5V)
 
