@@ -1,0 +1,294 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-25T21:03:00",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [
+        {
+            "description": "No pad found for pin 5 (GND) in schematic",
+            "items": [
+                {
+                    "description": "Footprint CN1",
+                    "pos": {
+                        "x": 144.2375,
+                        "y": 90.02
+                    },
+                    "uuid": "8f3cf1db-5b1d-4dc2-bf91-22af121968cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "SE050E2HQ1:QFN40P300X300X33-21N-D doesn't match footprint given by symbol (QFN40P300X300X33-21N-D)",
+            "items": [
+                {
+                    "description": "Footprint IC1",
+                    "pos": {
+                        "x": 177.4,
+                        "y": 106.57
+                    },
+                    "uuid": "7e19de1f-b765-4d48-a5b3-de03942a2a6d"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        }
+    ],
+    "source": "W5500-EVB-Pico2-E22P.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "The current configuration does not include the footprint library 'Connectors_Generic'",
+            "items": [
+                {
+                    "description": "Footprint J1",
+                    "pos": {
+                        "x": 198.02,
+                        "y": 129.86
+                    },
+                    "uuid": "17850d58-5dcd-4c28-a180-bc6e1697065c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint U3",
+                    "pos": {
+                        "x": 186.576,
+                        "y": 73.231
+                    },
+                    "uuid": "253b1fb0-1b14-4c6c-aa2f-2c19235fe688"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint C3",
+                    "pos": {
+                        "x": 188.84,
+                        "y": 73.54
+                    },
+                    "uuid": "4214a862-8a74-4b95-8069-9c85281b5d0c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint Q1",
+                    "pos": {
+                        "x": 139.958,
+                        "y": 96.139
+                    },
+                    "uuid": "512bf7be-8a49-4d08-9e41-64c970fd17a8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint C4",
+                    "pos": {
+                        "x": 182.0,
+                        "y": 106.27
+                    },
+                    "uuid": "66ebe994-a734-4f62-a7cc-e925ded0b599"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint RN1",
+                    "pos": {
+                        "x": 149.9635,
+                        "y": 89.7365
+                    },
+                    "uuid": "6fa870b0-4907-437d-bc63-db9d42f05540"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Footprint 'QFN40P300X300X33-21N-D' does not match copy in library 'SE050E2HQ1'",
+            "items": [
+                {
+                    "description": "Footprint IC1",
+                    "pos": {
+                        "x": 177.4,
+                        "y": 106.57
+                    },
+                    "uuid": "7e19de1f-b765-4d48-a5b3-de03942a2a6d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint CN1",
+                    "pos": {
+                        "x": 144.2375,
+                        "y": 90.02
+                    },
+                    "uuid": "8f3cf1db-5b1d-4dc2-bf91-22af121968cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint Q2",
+                    "pos": {
+                        "x": 144.7085,
+                        "y": 96.139
+                    },
+                    "uuid": "9446d7b8-6bb2-45f0-bd2e-4ecb8d5382b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 164.859,
+                        "y": 111.331
+                    },
+                    "uuid": "9b5c871f-44ac-4e95-8250-789c7472ac63"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint C2",
+                    "pos": {
+                        "x": 132.855,
+                        "y": 73.358
+                    },
+                    "uuid": "9f2b7bab-ff7c-465a-9d77-9e8d498fd383"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint C7",
+                    "pos": {
+                        "x": 182.04,
+                        "y": 109.39
+                    },
+                    "uuid": "a9e48759-92c6-4b01-9169-314e8f9947d6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint SMA1",
+                    "pos": {
+                        "x": 93.64,
+                        "y": 97.55
+                    },
+                    "uuid": "ac39d91b-23ef-4f33-b171-90cb781d4d11"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint C1",
+                    "pos": {
+                        "x": 148.154967,
+                        "y": 77.65
+                    },
+                    "uuid": "d4fdc5ac-1e9c-4921-ab95-714d53145ce4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'W5500-EVB--easyedapro'",
+            "items": [
+                {
+                    "description": "Footprint L1",
+                    "pos": {
+                        "x": 167.399,
+                        "y": 136.35
+                    },
+                    "uuid": "ebaba9e5-7f48-4373-bade-75c397fc001f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+Drill report for W5500-EVB-Pico2-E22P.kicad_pcb
+Created on 2026-09-25T21:03:16
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  Top Layer                 front
+    L2 :  Bottom Layer              back
+
+
+Drill file 'W5500-EVB-Pico2-E22P-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.305mm  0.0120"  (379 holes))
+    T2  0.500mm  0.0197"  (32 holes))
+    T3  1.000mm  0.0394"  (5 holes))
+    T4  1.100mm  0.0433"  (51 holes))
+    T5  1.300mm  0.0512"  (1 hole)
+    T6  1.550mm  0.0610"  (4 holes))
+    T7  2.500mm  0.0984"  (2 holes))
+    T8  3.500mm  0.1378"  (2 holes))
+
+    Total plated holes count 476
+
+
+Drill file 'W5500-EVB-Pico2-E22P-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0
