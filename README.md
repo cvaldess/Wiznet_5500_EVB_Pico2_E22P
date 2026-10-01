@@ -1,6 +1,6 @@
 # Wiznet_5500_EVB_Pico2_E22P
 
-A custom PCB carrier board built around the **WIZnet W5500-EVB-Pico2** (an RP2350 with an **on-board W5500 Ethernet** controller) and an **Ebyte E22P LoRa module**, in a single compact design for Meshtastic applications, low-cost Ethernet MQTT Gateway and APRS iGate/Digipeater.
+A custom PCB carrier board built around the **WIZnet W5500-EVB-Pico2** (an RP2350 with an **on-board W5500 Ethernet** controller) and an **Ebyte E22P LoRa module**, in a single compact design for Meshtastic applications, low-cost Ethernet MQTT Gateway, APRS iGate/Digipeater and Reticulum transport node.
 
 ![W5500-EVB-Pico2-E22P](W5500_evb_Pico2-E22P.jpeg)
 
@@ -35,10 +35,11 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 - **WIZnet W5500-EVB-Pico2** — RP2350-based microcontroller with dual-core Arm Cortex-M33 / RISC-V and an **on-board W5500** hardwired TCP/IP Ethernet controller (no external SPI Ethernet module required)
 - **WIZPoE-P1** - Compact PoE module compliant with IEEE802.3af, supporting Mode A and Mode B
 - **Ebyte E22P (868M30S)** — LoRa transceiver module (900 MHz, 30 dBm) for long-range wireless communication
-- **BMP280 sensor header** — Dedicated footprint (H1) for a BMP280 temperature and pressure sensor via I2C
-- **I2C expansion header** (H3) — +5V, +3.3V, SCL, SDA, GND for additional I2C peripherals
-- **UART expansion header** (H2) — +5V, +3.3V, TX, RX, GND for serial communication
-- **Decoupling capacitors** — 100 µF and 10 µF for power supply filtering
+- **SHT4X** — SHT4X Sensirion Temperature/Humidity sensors via I2C
+- **I2C expansion header** (STEMMA QT) for I2C Sensors (Optional)
+- **GPS expansion header** +5V, TX, RX, PPS, GND for external GPS module (Optional)
+- **GPS02-UBX** Quad-Mode Satellite UBLOX GPS Module With Latest UBLOX IC M10 Series And ESD Protection (Optional)
+- **SE050** NXP Semiconductors EdgeLock SE050 Plug and Trust Secure Element (Optional)
 - **PoE PD** - Power Supply.
 
 ## Board Images
