@@ -28,9 +28,7 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 ## PCB
 
-![2D PCB Layout](w5500_evb_pico2_e22p-V2.0.JPG)
-
-[JLCPCB](https://jlcpcb.com/?from=MJCHJNNSFFPCJAEEP)
+![2D PCB Layout](W5500_evb_Pico2-E22P-2D.JPG)
 
 ## Features
 
@@ -53,7 +51,7 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 The full schematic is available as a SVG file:
 
-![Schematics](SCH_W5500_evb_Pico2-E22PV2.0.jpg)
+![Schematics](SCH_W5500_evb_Pico2-E22P.jpg)
 
 ## Bill of Materials
 
