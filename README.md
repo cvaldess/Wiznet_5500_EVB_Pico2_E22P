@@ -4,13 +4,8 @@ A custom PCB carrier board built around the **WIZnet W5500-EVB-Pico2** (an RP235
 
 ![W5500-EVB-Pico2-E22P](W5500_evb_Pico2-E22P.jpeg)
 
-## Where to buy
-
 Everything needed to build this board yourself is in this repository, under the GPL. If you would
 rather skip the sourcing and the soldering, assembled units are available:
-
-**[Buy an assembled board →](https://meshtastic.cvaldess.com/nmwiznet)** — €69.99, built, flashed and
-tested before it ships. Ships from Spain to the EU.
 
 Nothing is held back for the sale: the schematic, the bill of materials and the pin mapping are all
 here, and the same design sent to any board house gives you the same board.
@@ -26,7 +21,7 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 **@cvaldess** — [cvaldess@cvaldess.com](mailto:cvaldess@cvaldess.com) - [meshtastic.cvaldess.com](https://meshtastic.cvaldess.com)
 
-## PCB
+## PCB V2.0
 
 ![2D PCB Layout](W5500_evb_Pico2-E22P-2D.JPG)
 
@@ -44,13 +39,13 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 ## Board Images
 
-| 3D Render | Assembled |
+| 3D Render V2.0 | Assembled |
 |:---------:|:---------:|
 | ![3D](W5500_evb_Pico2-E22P-3D.JPG) | ![Assembled](W5500_evb_Pico2-E22P.jpeg) |
 
 ## Schematic
 
-The full schematic is available as a SVG file:
+The full V2.0 schematic is available as a JPG file:
 
 ![Schematics](SCH_W5500_evb_Pico2-E22P.jpg)
 
@@ -60,11 +55,7 @@ The full schematic is available as a SVG file:
 |-----------|-------------|:--------:|
 | [WIZnet W5500-EVB-Pico2](https://shop.wiznet.eu/en/w5500-evb-pico2.html) | RP2350 microcontroller board with on-board W5500 Ethernet | 1 |
 | [WIZPoE-P1](https://shop.wiznet.eu/en/wizpoe-p1.html) | Compact PoE module compliant with IEEE802.3af, supporting Mode A and Mode B | 1 |
-| [Ebyte E22-868M30S](https://s.click.aliexpress.com/e/_c3ABeS7X) | SX1262 Wireless Transceiver LoRa Module (30 dBm) | 1 |
-| [BMP280 module](https://s.click.aliexpress.com/e/_c3lamruN) | I2C temperature & pressure sensor | 1 |
-| [C1 — 470µF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Capacitor ALUM POLY 470uF ±20% 16V SMD | 1 |
-| [C2 — 100nF](https://s.click.aliexpress.com/e/_c2I8FhOZ) | Ceramic capacitor | 1 |
-| [Pin header](https://s.click.aliexpress.com/e/_c3xaLyyp) | 2.54 mm male/female headers | As needed |
+| [Ebyte E22P-868M30S](https://s.click.aliexpress.com/e/_c3ABeS7X) | SX1262 Wireless Transceiver LoRa Module (30 dBm) | 1 |
 | [PoE Injector 802.3af](https://s.click.aliexpress.com/e/_c3LHjvOt) | 802.3af PoE Injector | 1 |
 
 ## Pin Mapping
@@ -93,15 +84,6 @@ The full schematic is available as a SVG file:
 | RXEN     | GP3 (held HIGH — LNA/PA enable) |
 | TXEN     | bridged from DIO2 on the module |
 
-### SHT40 Sensor (I2C) — H1
-
-| SHT40 Pin  | Signal |
-|------------|--------|
-| VCC        | +3.3V  |
-| GND        | GND    |
-| SCL        | I2C SCL|
-| SDA        | I2C SDA|
-
 ### I2C Expansion (STEMMA QT) — CN1
 
 | Pin | Signal |
@@ -123,11 +105,9 @@ JP1 - VCC Voltge select (Default 3.3V)
 | 4   | RX     |
 | 5   | PPS    |
 
-JP2 - VCC Voltage select (Default 5V)
-
 ## Meshtastic Firmware
 
-Pre-built Meshtastic firmware (v2.8.0.0770000) for the WIZnet W5500-EVB-Pico2 + E22P hardware. This version includes the "Use with client.meshtastic.org" feature. Choose your installation method:
+Pre-built Meshtastic firmware (v2.8.X) for the WIZnet W5500-EVB-Pico2 + E22P hardware. This version includes the "Use with client.meshtastic.org" feature. Choose your installation method:
 
 ### Method 1: Direct USB flash (UF2)
 Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop the UF2 file onto the RP2350 drive that appears.
@@ -162,6 +142,7 @@ Update an already-deployed node over the network using the node Web OTA.
 - Meshtastic mesh network
 - Low cost MQTT Gateway
 - APRS iGate/Digipeater
+- Reticulum Transport Node
 - Remote environmental monitoring (temperature, pressure)
 - LoRa-based sensor networks with Ethernet gateway
 - Industrial IoT data collection nodes
