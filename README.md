@@ -131,12 +131,20 @@ Pre-built CA2RXU LoRa APRS iGate/Digipeater firmware for the WIZnet W5500-EVB-Pi
 ### Method 1: Direct USB flash (UF2)
 Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop the UF2 file onto the RP2350 drive that appears.
 
- - [Download .bin file](https://meshfiles.cvaldess.com/rp2350_igate.bin)
+## wiznet_5100s_evb_pico2
+ - [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1009.bin)
+
+## wiznet_5500_evb_pico2
+ - [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1009.bin)
 
  ### Method 2: Ethernet OTA utility
 Update an already-deployed node over the network using the node Web OTA.
 
- - [Download .uf2 file](https://meshfiles.cvaldess.com/rp2350_igate.uf2)
+## wiznet_5100s_evb_pico2
+ - [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1009.uf2)
+
+## wiznet_5500_evb_pico2
+ - [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1009.uf2)
 
 ## Use Cases
 - Meshtastic mesh network
