@@ -4,11 +4,10 @@ A custom PCB carrier board built around the **WIZnet W5500-EVB-Pico2** (an RP235
 
 ![W5500-EVB-Pico2-E22P](W5500_evb_Pico2-E22P.jpeg)
 
-Everything needed to build this board yourself is in this repository, under the GPL. If you would
-rather skip the sourcing and the soldering, assembled units are available:
+*Previous revision, assembled. The V2.0 boards are on their way from the fab; photos will follow.*
 
-Nothing is held back for the sale: the schematic, the bill of materials and the pin mapping are all
-here, and the same design sent to any board house gives you the same board.
+Everything needed to build this board yourself is in this repository, under the GPL: the schematic,
+the Gerbers, the main components and the pin mapping.
 
 > Meshtastic is a trademark of Meshtastic LLC. This board is an independent design, not
 > affiliated with or endorsed by Meshtastic LLC.
@@ -29,7 +28,7 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 - **WIZnet W5500-EVB-Pico2** — RP2350-based microcontroller with dual-core Arm Cortex-M33 / RISC-V and an **on-board W5500** hardwired TCP/IP Ethernet controller (no external SPI Ethernet module required)
 - **WIZPoE-P1** - Compact PoE module compliant with IEEE802.3af, supporting Mode A and Mode B
-- **Ebyte E22P (868M30S)** — LoRa transceiver module (900 MHz, 30 dBm) for long-range wireless communication
+- **Ebyte E22P (868M30S)** — LoRa transceiver module (868 MHz, 30 dBm) for long-range wireless communication. The 433 MHz E22P-433M30S fits the same footprint (LoRa APRS)
 - **SHT4X** — SHT4X Sensirion Temperature/Humidity sensors via I2C
 - **I2C expansion header** (STEMMA QT) for I2C Sensors (Optional)
 - **GPS expansion header** +5V, TX, RX, PPS, GND for external GPS module (Optional)
@@ -39,7 +38,7 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 ## Board Images
 
-| 3D Render V2.0 | Assembled |
+| 3D Render V2.0 | Assembled (previous revision) |
 |:---------:|:---------:|
 | ![3D](W5500_evb_Pico2-E22P-3D.JPG) | ![Assembled](W5500_evb_Pico2-E22P.jpeg) |
 
@@ -82,7 +81,24 @@ The full V2.0 schematic is available as a JPG file:
 | DIO1/IRQ | GP14        |
 | BUSY     | GP2         |
 | RXEN     | GP3 (held HIGH — LNA/PA enable) |
-| TXEN     | bridged from DIO2 on the module |
+| TXEN     | DIO2 through JP3 (default), or GP6 |
+
+JP3 (TXEN select, solder jumper): bridged 1-2 by default, so DIO2 drives the E22P's TXEN. Cut it and
+bridge 2-3 to drive TXEN from GP6 instead (not tested yet).
+
+### Other GPIOs (V2.0)
+
+| Signal | Pico 2 GPIO | Notes |
+|--------|-------------|-------|
+| I2C SDA | GP4 | SHT4x, SE050 and CN1 (level-shifted) |
+| I2C SCL | GP5 | |
+| SE050 enable | GP7 | |
+| GPS TX (MCU → GPS) | GP8 | UART1 |
+| GPS RX (GPS → MCU) | GP9 | UART1 |
+| GPS PPS | GP26 | not tested yet |
+| GPS power enable | GP22 | TPS22917 load switch: the GPS has no power until GP22 is driven high |
+| GPS reset | GP27 | on-board GPS02-UBX only |
+| E22P TXEN (alternative) | GP6 | only with JP3 bridged 2-3 |
 
 ### I2C Expansion (STEMMA QT) — CN1
 
@@ -93,7 +109,7 @@ The full V2.0 schematic is available as a JPG file:
 | 3   | SDA    |
 | 4   | SCL    |
 
-JP1 - VCC Voltge select (Default 3.3V)
+JP2 (CN1 VCC select, solder jumper): 3.3 V by default (bridged 1-2), or 5 V (bridged 2-3).
 
 ### GPS Expansion (JST SH 1.00 mm) — CN2
 
@@ -119,32 +135,28 @@ Update an already-deployed node over the network using the [Ethernet OTA utility
 
 - [Download .bin file](https://meshfiles.cvaldess.com/firmware-wiznet_5500_evb_pico2_e22p.bin)
 
-### Method 3:
-In our Client Area you can easy Flah it and Configure, also can protect your image with custom PSK.
+### Method 3: Client Area
+In the Client Area you can flash and configure it easily, and protect your image with a custom PSK.
 
  - [Client Area](https://clientarea.cvaldess.com/)
 
 ## CA2RXU LoRa APRS iGate/Digipeater firmware
 
-Pre-built CA2RXU LoRa APRS iGate/Digipeater firmware for the WIZnet W5500-EVB-Pico2 + E22P-433M30S hardware
+Pre-built CA2RXU LoRa APRS iGate/Digipeater firmware for this board with the 433 MHz E22P-433M30S, on either
+the WIZnet W5500-EVB-Pico2 or the W5100S-EVB-Pico2. The RP2350 + Ethernet port is pending upstream review
+([richonguzman/LoRa_APRS_iGate#438](https://github.com/richonguzman/LoRa_APRS_iGate/pull/438)).
 
 ### Method 1: Direct USB flash (UF2)
 Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop the UF2 file onto the RP2350 drive that appears.
 
-## wiznet_5100s_evb_pico2
- - [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1009.bin)
+- W5500-EVB-Pico2: [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1009.uf2)
+- W5100S-EVB-Pico2: [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1009.uf2)
 
-## wiznet_5500_evb_pico2
- - [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1009.bin)
+### Method 2: Ethernet OTA
+Update an already-deployed node over the network from the node's web OTA page.
 
- ### Method 2: Ethernet OTA utility
-Update an already-deployed node over the network using the node Web OTA.
-
-## wiznet_5100s_evb_pico2
- - [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1009.uf2)
-
-## wiznet_5500_evb_pico2
- - [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1009.uf2)
+- W5500-EVB-Pico2: [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1009.bin)
+- W5100S-EVB-Pico2: [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1009.bin)
 
 ## Use Cases
 - Meshtastic mesh network
