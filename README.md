@@ -2,7 +2,7 @@
 
 A custom PCB carrier board built around the **WIZnet W5500-EVB-Pico2** (an RP2350 with an **on-board W5500 Ethernet** controller) and an **Ebyte E22P LoRa module**, in a single compact design for Meshtastic applications, low-cost Ethernet MQTT Gateway, APRS iGate/Digipeater and Reticulum transport node.
 
-![W5500-EVB-Pico2-E22P](W5500_evb_Pico2-E22P.jpeg)
+![W5500-EVB-Pico2-E22P](W5500-EVB-Pico2-E22P-Cover.png)
 
 *Previous revision, assembled. The V2.0 boards are on their way from the fab; photos will follow.*
 
