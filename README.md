@@ -4,7 +4,7 @@ A custom PCB carrier board built around the **WIZnet W5500-EVB-Pico2** (an RP235
 
 ![W5500-EVB-Pico2-E22P](W5500-EVB-Pico2-E22P-Cover.png)
 
-*Previous revision, assembled. The V2.0 boards are on their way from the fab; photos will follow.*
+<a href="https://www.pcbway.com/project/shareproject/Wiznet_5500_EVB_Pico2_E22P_1ffbe646.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
 Everything needed to build this board yourself is in this repository, under the GPL: the schematic,
 the Gerbers, the main components and the pin mapping.
