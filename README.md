@@ -142,21 +142,43 @@ In the Client Area you can flash and configure it easily, and protect your image
 
 ## CA2RXU LoRa APRS iGate/Digipeater firmware
 
-Pre-built CA2RXU LoRa APRS iGate/Digipeater firmware for this board with the 433 MHz E22P-433M30S, on either
-the WIZnet W5500-EVB-Pico2 or the W5100S-EVB-Pico2. The RP2350 + Ethernet port is pending upstream review
-([richonguzman/LoRa_APRS_iGate#438](https://github.com/richonguzman/LoRa_APRS_iGate/pull/438)).
+Since November 2026 this board is supported by the official
+[CA2RXU LoRa APRS iGate/Digipeater](https://github.com/richonguzman/LoRa_APRS_iGate) firmware (RP2350 + Ethernet port, merged in
+[richonguzman/LoRa_APRS_iGate#438](https://github.com/richonguzman/LoRa_APRS_iGate/pull/438)), on either the WIZnet W5500-EVB-Pico2
+(env `wiznet_5500_evb_pico2_e22p`) or the W5100S-EVB-Pico2 (env `wiznet_5100s_evb_pico2_e22p`).
+Fit the 433 MHz E22P-433M30S: LoRa APRS runs on 433.775 MHz.
+
+The images below are built from the official repository (`main` at `a9cf1a1`, 17 Nov 2026).
+From the next iGate release on, the same boards also come as zips in its [Releases](https://github.com/richonguzman/LoRa_APRS_iGate/releases).
 
 ### Method 1: Direct USB flash (UF2)
 Hold the BOOTSEL button while connecting the board via USB, then drag-and-drop the UF2 file onto the RP2350 drive that appears.
 
-- W5500-EVB-Pico2: [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1009.uf2)
-- W5100S-EVB-Pico2: [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1009.uf2)
+- W5500-EVB-Pico2: [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1117.uf2)
+- W5100S-EVB-Pico2: [Download .uf2 file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1117.uf2)
 
 ### Method 2: Ethernet OTA
-Update an already-deployed node over the network from the node's web OTA page.
+Update an already-deployed iGate over the network from its web page.
 
-- W5500-EVB-Pico2: [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1009.bin)
-- W5100S-EVB-Pico2: [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1009.bin)
+- W5500-EVB-Pico2: [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5500_evb_pico2_e22p-1117.bin)
+- W5100S-EVB-Pico2: [Download .bin file](https://meshfiles.cvaldess.com/igate-wiznet_5100s_evb_pico2_e22p-1117.bin)
+
+### First boot
+The board gets its address by DHCP. Open `http://<board-ip>/` (look the address up in your router)
+to set the callsign, the APRS-IS passcode and the rest of the configuration.
+
+### What it does on this board
+- Receive-only iGate (RF to APRS-IS, `qAO`), position beacon over RF and APRS-IS, T# telemetry.
+- Digipeater (WIDEn-N) and backup digipeater while APRS-IS is down; channel check (CAD) before every transmission.
+- The same web page as the ESP32 boards, with the live stations map and network OTA; KISS TNC server
+  (TCP 8001), MQTT, remote syslog, SNTP, DHCP or static IP.
+- WX sensor on I2C (GP4/GP5): the on-board SHT4x or a sensor on CN1.
+- Not available: gating APRS-IS messages and objects back to RF, the CrossFreq digipeater, and the GPS on
+  CN2 (not supported by the iGate firmware on this board yet).
+
+The firmware expects JP3 in its default position (DIO2 drives the E22P's TXEN). With JP3 bridged 2-3
+(TXEN on GP6, not tested yet), build it yourself from the iGate repository with `-D RADIO_TXEN=6`
+added to the env's `build_flags` (`pio run -e wiznet_5500_evb_pico2_e22p`).
 
 ## Use Cases
 - Meshtastic mesh network
