@@ -38,9 +38,9 @@ This project is licensed under the [GNU General Public License v2.0](LICENSE).
 
 ## Board Images
 
-| 3D Render V2.0 | Assembled (previous revision) |
+| 3D Render V2.0 | Assembled |
 |:---------:|:---------:|
-| ![3D](W5500_evb_Pico2-E22P-3D.JPG) | ![Assembled](W5500_evb_Pico2-E22P.jpeg) |
+| ![3D](W5500_evb_Pico2-E22P-3D.JPG) | ![Assembled](W5500_evb_Pico2-E22P.JPG) |
 
 ## Schematic
 
